@@ -2,6 +2,9 @@
 grafana_version: latest
 grafana_yum_repo_template: etc/yum.repos.d/grafana.repo.j2
 
+# Should the playbook install the repos or rather let the user manage it himself
+manage_repos: true
+
 # Should we use the provisioning capability when possible (provisioning require grafana >= 5.0)
 grafana_use_provisioning: true
 

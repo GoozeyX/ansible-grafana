@@ -26,7 +26,9 @@
     dest: "/etc/yum.repos.d/{{ grafana_yum_repo_template | basename | regex_replace('\\.j2$', '') }}"
     force: true
     backup: true
-  when: ansible_pkg_mgr in ['yum', 'dnf']
+  when:
+    - ansible_pkg_mgr in ['yum', 'dnf']
+    - manage_repos
 
 - block:
     - name: Import Grafana GPG signing key [Debian/Ubuntu]
